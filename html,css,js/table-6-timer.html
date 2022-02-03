@@ -19,15 +19,18 @@
   </style>
   <script>
       let prev = 0;
+      const f = () => {
+        
+        console.log('버튼이 눌렸다');
+        let $ttt = $('tbody>tr>td');
+        let rand = parseInt(Math.random() * $ttt.length);
+        $ttt.eq(prev).css('background-color','white');
+        prev = rand;
+        $ttt.eq(rand).css('background-color','red');            
+    
+      }
       $(document).ready(function(){
-        $('button').click(function(){
-            console.log('버튼이 눌렸다');
-            let $ttt = $('tbody>tr>td');
-            let rand = parseInt(Math.random() * $ttt.length);
-            $ttt.eq(prev).css('background-color','white');
-            prev = rand;
-            $ttt.eq(rand).css('background-color','red');            
-        })
+        setInterval(f, 500);
       })
   </script>
 </head>
