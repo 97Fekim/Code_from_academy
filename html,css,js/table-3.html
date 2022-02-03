@@ -5,15 +5,30 @@
   <meta charset="utf-8">
   <title>기본 html 문서
   </title>
-
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script>
+      $(document).ready(function(){
+          $('button').click(function(){
+              // 버튼이 눌리면 여기 코드 실행함
+              // 버튼 태그 생성
+              $('a').eq(0).attr('href','https://naver.com');
+              // attr (attribute 약자), 이 href를 찾아서 값을 
+              // attr의 두번째 매개변수('https://naver.com')로 변경
+          })
+      })
+  </script>
   <style>
-   
+   table, th, td{
+       border:1px solid #ccc;
+   }
+   th, td {
+       padding:10px;
+   }
   </style>
-
 </head>
 
 <body>
-    <table>
+    <table border = "1">
         <caption>
             <strong>Modern 브라우저</strong>
             <p>국내에서 자주 사용하는 모던 브라우저</p>
@@ -39,6 +54,7 @@
             <td><a href="Microsoft.com">구글로 가세요</a></td>
         </tr>
     </table>
+    <button>누르면 네이버로 이동함</button>
 </body>
 
 </html>
