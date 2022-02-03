@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>기본 html 문서
+  </title>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    
+ <script>
+  let arr = ['https://www.inflearn.com/course/%EC%9E%90%EB%B0%94-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4-%EC%BD%94%ED%85%8C%EB%8C%80%EB%B9%84/dashboard',
+  'https://getbootstrap.com/docs/5.1/content/tables/',
+  'https://github.com/97Fekim/Code_from_academy'];
+
+      $(document).ready(function(){
+         for(let i=0; i<3; i++){
+             $('button').eq(i).click(function(){
+                $('a').eq(i).attr('href',arr[i]);
+             })
+         }
+      })
+ 
+  </script>
+  <style>
+   table, th, td{
+       border:1px solid #ccc;
+   }
+   th, td {
+       padding:10px;
+   }
+  </style>
+</head>
+
+<body>
+    <table border = "1">
+        <caption>
+            <strong>Modern 브라우저</strong>
+            <p>국내에서 자주 사용하는 모던 브라우저</p>
+        </caption>
+        <tr>
+            <th>브라우저</th>
+            <th>제조업체</th>
+            <th>다운로드</th>
+        </tr>
+        <tr>
+            <th>크롬</th>
+            <td>구글</td>
+            <td><a href="google.com">구글로 가세요</a></td>
+        </tr>
+        <tr>
+            <th>파이어폭스</th>
+            <td>Mozila</td>
+            <td><a href="Mozila.com">구글로 가세요</a></td>
+        </tr>
+        <tr>
+            <th>엣지</th>
+            <td>마소</td>
+            <td><a href="Microsoft.com">구글로 가세요</a></td>
+        </tr>
+    </table>
+    <button>누르면 네이버로 이동함</button>
+    <button>누르면 다음으로 이동함</button>
+    <button>누르면 어디론가 이동함</button>
+</body>
+
+</html>
