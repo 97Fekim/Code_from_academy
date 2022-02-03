@@ -1,0 +1,45 @@
+package class_learning;
+
+public class Car 
+{
+	public int doorNumber;
+	public int windowNumber;
+	
+	public String name;
+	public String color;
+	
+	/* getter */
+	public int getDoorNumber()
+	{
+		return doorNumber;
+	}
+	
+	public int getWindowNumber()
+	{
+		return windowNumber;
+	}
+	
+	public String getName()
+	{
+		return name;
+	}
+	
+	public String getColor()
+	{
+		return color;
+	}
+	
+	/* 기본생성자 */
+	public Car()
+	{
+		System.out.println("기본생성자 호출");
+	}
+	
+	/* 대입생성자 */
+	public Car(int n1, int n2, String str1, String str2)
+	{
+		this.doorNumber = n1; this.windowNumber = n2; this.name = str1; this.color = str2;
+		System.out.println("파라미터 4개를 가진 생성자 호출");
+	}
+	
+}

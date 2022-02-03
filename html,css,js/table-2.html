@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>tale</title>
+  <style>
+    table, th, td {
+        border: 1px solid #7fb;
+    }
+    th{
+        padding: 15px;  
+    }
+    tr > rh:nth-child(odd){
+        width: 120px;   /* 홀수번째 열(폭)의 너비 : 120px */    
+    }
+    tr > rh:nth-child(even){
+        width: 300px;   /* 짝수번째 열(폭)의 너비 : 120px */    
+    }
+    /* >는 자식(child). 공백은 자손(descendant) */
+  </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>이름</th>
+            <td></td>
+            <td>연락처</td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>주소</th>
+            <td colspan="3"></td>
+        </tr>
+        <tr>
+            <th>자기소개</th>
+            <td colspan="3"></td>
+        </tr>
+    </table>
+</body>
+</html>
+<!-- tr(table row), td(table date), th(table head) -->

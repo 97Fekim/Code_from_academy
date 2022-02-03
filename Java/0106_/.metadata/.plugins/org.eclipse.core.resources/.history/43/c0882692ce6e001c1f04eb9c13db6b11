@@ -1,0 +1,9 @@
+package class_ex;
+
+public class Class_ex2 
+{
+	public static void main(String[] args) 
+	{
+		Class_ex1 ex1 = new Class_ex1();	// 생성자(클래스 이름과 동일한 함수)
+	}
+}

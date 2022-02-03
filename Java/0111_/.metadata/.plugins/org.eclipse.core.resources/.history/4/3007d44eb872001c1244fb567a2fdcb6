@@ -1,0 +1,49 @@
+package OOP;
+
+public class Trcuk
+{
+	private String driver;
+	private int window;
+	private int door;
+	private String wife;
+	
+	public void setDriver(String driver)
+	{
+		this.driver = driver;
+	}
+	public void setWindow(int window) 
+	{
+		this.window = window;
+	}
+	public void setDoor(int door) 
+	{
+		this.door = door;
+	}
+	public void setWife(String wife) 
+	{
+		this.wife = wife;
+	}
+	public String getDriver() 
+	{
+		return driver;
+	}
+	public int getWindow() 
+	{
+		return window;
+	}
+	public int getDoor() 
+	{
+		return door;
+	}
+	public String getWife() 
+	{
+		return wife;
+	}
+	
+	boolean isDriverMarried()
+	{
+		return (this.driver.length() > 5);
+	}
+	
+	
+}

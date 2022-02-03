@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- jQurey CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>계산기</title>
+    
+    </head>
+  <body>
+    
+    <h1>계산기</h1>
+
+    <script>
+      const plus = () => {
+        let first = $('input').eq(0).val();
+        let second = $('input').eq(1).val();
+        let result = Number(first) + Number(second);
+        $('input').eq(2).val(result);
+        console.log('덧셈이 실행되었어요', first,'+', second,'=',result);
+      }
+      
+      const substrate = () => {
+        let first = $('input').eq(0).val();
+        let second = $('input').eq(1).val();
+        let result = Number(first) - Number(second);
+        $('input').eq(2).val(result);
+        console.log('뺄셈이 실행되었어요', first,'-', second,'=',result);
+      }
+
+      const mul = () => {
+        let first = $('input').eq(0).val();
+        let second = $('input').eq(1).val();
+        let result = Number(first) * Number(second);
+        $('input').eq(2).val(result);
+        console.log('곱셈이 실행되었어요', first,'*', second,'=',result);
+      }
+
+      const div = () => {
+        let first = $('input').eq(0).val();
+        let second = $('input').eq(1).val();
+        let result = Number(first) / Number(second);
+        $('input').eq(2).val(result);
+        console.log('나눗셈이 실행되었어요', first,'/', second,'=',result);
+      }
+
+      let func_arr = [plus,substrate,mul,div]
+      $(document).ready(function(e){
+          $('button').each(function(i,j){
+            $(this).click(function(e){
+              func_arr[i]();
+            })
+          })
+      })
+      
+    </script>
+    첫번째 값 : <input type="text" name="" id="">
+    첫번째 값 : <input type="text" name="" id="">
+    결과 값 : <input type="text" name="" id="">
+
+    <button type="button" class="btn btn-primary">덧셈</button>
+    <button type="button" class="btn btn-secondary">뺄셈</button>
+    <button type="button" class="btn btn-success">곱셈</button>
+    <button type="button" class="btn btn-danger">나눗셈</button>
+    <br>
+    <table class="table">
+      <thead>
+        MyTable
+      </thead>
+      <tbody>
+        <tr class="table-active">
+          MyTable
+        </tr>
+        <tr>
+          <th scope="row">1</th>
+          <th scope="row">2</th>
+          <th scope="row">3</th>
+          <td colspan="2" class="table-active">Larry the Bird</td>
+          
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td colspan="2" class="table-active">Larry the Bird</td>
+          <td>@twitter</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td colspan="2" class="table-active">Larry the Bird</td>
+          <td>@twitter</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

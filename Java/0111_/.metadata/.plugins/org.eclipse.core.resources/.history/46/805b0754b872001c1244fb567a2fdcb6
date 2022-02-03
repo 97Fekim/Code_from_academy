@@ -1,0 +1,11 @@
+package OOP;
+
+public class Truck_test {
+
+	public static void main(String[] args) 
+	{
+		
+
+	}
+
+}

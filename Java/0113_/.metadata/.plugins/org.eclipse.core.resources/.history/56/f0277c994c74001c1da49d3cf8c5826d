@@ -1,0 +1,63 @@
+package Inheritance2;
+
+public class Buyer	// 고객, 물건을 사는 사람
+{
+	int money = 1000;	// 소유 금액
+	int bonusPoint=0;	// 보너스 점수
+	Product[] item = new Product[10];	// 고객의 제품을 저장하기 위한 배열
+	// has a 상속
+	
+	int getMoney()
+	{
+		return this.money;
+	}
+	
+	int getBonuePoint()
+	{
+		return this.bonusPoint;
+	}
+	
+	Product[] getItem()
+	{
+		return this.item;
+	}
+	
+	void setBonusPoint(int bonusPoint)
+	{
+		this.bonusPoint = bonusPoint;
+	}
+	
+	void setItem(Product[] item)
+	{
+		this.item = item;
+	}
+	
+	int i = 0;
+	
+	void buy(Product p)
+	{
+		if(money < p.getPrice())
+		{
+			System.out.println("잔액이 부족하여 물건을 살수 없습니다.");
+		}
+		money -= p.getPrice();
+		bonusPoint += p.getBonusPoint();
+		item[i++] = p;
+		System.out.println(p + "을/를 구매하셨습니다.");
+	}
+	
+	void summary()
+	{
+		int sum = 0;
+		String itemList="";
+		for(int i=0; i< item.length; ++i)
+		{
+			if(item[i]==null)break;
+			sum+=item[i].getPrice();
+			itemList += item[i] + ",";
+		}
+		
+		System.out.println("구입하신 물건의 총 금액은 : "+sum+"만원입니다.");
+	}
+	
+}

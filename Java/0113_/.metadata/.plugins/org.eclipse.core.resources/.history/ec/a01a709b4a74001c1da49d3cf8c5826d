@@ -1,0 +1,8 @@
+package Inheritance2;
+
+public class Buyer	// 고객, 물건을 사는 사람
+{
+	int money = 1000;
+	
+	
+}

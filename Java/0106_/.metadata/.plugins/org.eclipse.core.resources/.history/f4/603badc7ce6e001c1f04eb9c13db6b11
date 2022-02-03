@@ -1,0 +1,16 @@
+package class_ex;
+
+public class Class_ex2 
+{
+	public static void main(String[] args) 
+	{
+		Class_ex1 ex1 = new Class_ex1();	// 생성자(클래스 이름과 동일한 함수)
+		// Class_ex1 (타입), ex1(참조변수)
+		// 클래스 (설계도면)
+		// 클래스를 가지고, 제품(실물)을 생성한다 => 객체(Object)
+		// 자바 ==> 객체 지향 언어 OOP(Object Oriented Program)
+		// 항상 객체를 생성 후 클래스의 멤버에 접근해라.
+		// 생성자는 객체 생성시 자동으로 호출됨, new 키워드와 함께 사용함
+		// 
+	}
+}

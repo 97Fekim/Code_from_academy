@@ -1,0 +1,15 @@
+package OOP;
+
+public class Truck_test
+{
+
+	public static void main(String[] args)
+	{
+		Truck truck1 = new Truck();
+		
+		truck1.setDriverName("Fekiaa");
+		
+		System.out.println(truck1.isDriverMarried());
+	}
+
+}

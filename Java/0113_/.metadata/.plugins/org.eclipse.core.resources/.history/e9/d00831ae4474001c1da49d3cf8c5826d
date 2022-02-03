@@ -1,0 +1,8 @@
+package Inheritance;
+
+public class Parent
+{
+	public age;
+	public cname;
+	public name;
+}

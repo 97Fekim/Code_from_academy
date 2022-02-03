@@ -1,0 +1,37 @@
+package OOP;
+
+public class ScoreTest
+{
+	public static void main(String[] args)
+	{
+		// 클래스의 멤버에 접근하기 위해 멤버연산자인 점을 찍어서 접근하려고 하는데,
+		// 설계도면이라서 바로 접근할 수 없다
+		
+		// 설계도면을 이용하여 제품을 찍어낸다.
+		// 객체(Object)를 생성한다 >> 메모리에 올라갔다.(인스턴스를 만들었다 ==> instantiation ==> 인스턴스화하다)
+		
+		// 제품을 찍어내는 방법
+		// 클래스(데이터 타입) 변수(참조변수) = new 생성자();
+		Score score1 = new Score();
+		
+//		// 클래스의 멤버인 멤버변수에 값 50을 저장
+//		score1.eng = 50;
+//		int eng = score1.eng;		// 클래스의 멤버인 멤버변수의 값을 읽어와서 지역변수(b)에 저장한다.
+//		System.out.println(eng);
+//		
+//		score1.math = 100;
+//		int math = score1.math;
+//		System.out.println(math);
+//		
+//		score1.korea = 100;
+//		int korea = score1.math;
+//		System.out.println(korea);
+		
+		
+		
+		// 생성자는 클래스 이름과 동일한 함수
+		/* 문제5) 국어점수를 100점까지의 점수중 하나를 저장할 수 있도록 random함수를 이용하세요 */
+		
+		
+	}
+}

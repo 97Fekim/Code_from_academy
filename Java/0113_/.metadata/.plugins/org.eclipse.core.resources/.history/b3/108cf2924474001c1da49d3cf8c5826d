@@ -1,0 +1,12 @@
+package Inheritance;
+
+public class ChildTest
+{
+	public static void main(String[] args)
+	{
+		Child c = new Child();
+		c.age = 70;
+		c.cname = "ÀÚ½Ä";
+		
+	}
+}

@@ -1,0 +1,10 @@
+package class_learning;
+
+public class Car_main 
+{
+	public static void main(String[] args) 
+	{
+		Car car = new Car();
+		
+	}
+}

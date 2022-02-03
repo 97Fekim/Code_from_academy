@@ -1,0 +1,10 @@
+package class_learning;
+
+public class Car 
+{
+	int doorNumber;
+	int windowNumber;
+	
+	String name;
+	
+}
