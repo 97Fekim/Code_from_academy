@@ -1,8 +1,0 @@
-package OOP;
-
-public class Score
-{
-	int math;	// ¸â¹öº¯¼ö(Score Å¬·¡½ºÀÇ ¸â¹ö)
-	int eng;	// 
-	int korea;
-}
