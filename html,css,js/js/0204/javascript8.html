@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 자바스크립트에서 객체는 
+        // key, value의 쌍으로 이루어진 데이터
+        var dict = {a:7, b:10};
+        var t = dict['a'];
+        console.log(t);
+        t = dict.a;
+        console.log(t);
+        dict['a'] = [1,2,3,4,5,6,7,8];
+
+        console.log(dict);
+        dict['c'] = {"a":11, "b":[1,2,3,4,5,6,7]};
+        // 문제8) c -> b -> 5를 출력하세요.
+        console.log(dict.c.b[4])
+
+        const f = (i) => {
+            // i에는 아마도 배열이 들어있을테니
+            // 그 배열의 총합을 반환하는 코드 구현
+            var sum = 0;
+            for(var j of i){
+                sum += j;
+            }         
+            return sum;    
+        }
+        var result = f(dict.c.b);
+        console.log(result);
+
+    </script>
+</body>
+</html>

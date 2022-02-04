@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <title>Document</title>
+    <script>
+        var arr=[];
+        for(let i=0; i<10; i++){
+            arr.push(i);
+        }
+        arr.push('a');
+        arr.push('b');
+        arr.push('c');
+        arr.push('d');
+        arr.push('e');
+        arr.push('f');
+        console.log(arr);
+
+        $(document).ready(function(){
+            setInterval(()=>{
+                // 여기 코드 추가하세요
+                var randColor="#";
+                for(var i=0; i<6; ++i){
+                    randColor += (arr[parseInt(Math.random()*16)]);
+                }
+                console.log(randColor)
+                $('button').css('background-color',randColor);
+            },1000);
+        })
+    </script>
+</head>
+<body>
+    <button>색상이 막 변경돼요</button>
+</body>
+</html>
