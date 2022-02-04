@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <title>테이블 퀴즈</title>
+    <script>
+        // $(document).on('ready',function(){
+        //     console.log('문서가 준비되었어요');
+        // })
+
+        const f = () => {
+            console.log('버튼이 눌렸어요');
+        }
+
+        $(document).ready(function(){
+            console.log('문서가 준비되었어요');
+            $('button').click(f);
+        
+        })
+
+    </script>
+</head>
+<body>
+    <button>눌러라,,</button>
+    <table border="1">
+        <caption>1인당 연간 설탕 소비량</caption>
+        <small>(단위:kg)</small>
+        <colgroup>
+            <col style="background: #eee;">
+            <col style="background: red;">
+        </colgroup>
+        <tr>
+            <!-- th하나(WHO 궈장량)와 th 하나(18.25) 추가 -->
+            <th>WHO 권장량</th>
+            <td>18.25</td>
+        </tr>
+    </table>
+</body>
+</html>

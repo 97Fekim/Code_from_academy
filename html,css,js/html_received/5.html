@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var list1=[
+            { 'tire':20, 'address':'부산111',price:101, name:'홍길동111'},
+            { 'tire':21, 'address':'마산',price:111, name:'홍말자'},
+            { 'tire':22, 'address':'울산',price:121, name:'이재오'},
+            { 'tire':23, 'address':'대수',price:1212, name:'김개똥'},
+            { 'tire':24, 'address':'포항',price:1111, name:'김말자'},
+            { 'tire':25, 'address':'전주',price:1341, name:'미금남자'},
+            { 'tire':26, 'address':'미금',price:1231, name:'제주사람'},
+            { 'tire':27, 'address':'서울',price:1133, name:'여수남자'},
+            { 'tire':28, 'address':'영등포',price:6611, name:'홍길동111'},
+            { 'tire':29, 'address':'제주도',price:7711, name:'강호동'},
+            { 'tire':221, 'address':'금도',price:181, name:'이휘재'},
+        ];
+        var re=list1.map(i=>i.name).map(i=>i.length>3?"수":'낙제').map(i=>i=="낙제" ?true:false)
+            .map(i=>i==true?1:0)
+            //.filter(i=>i==1)
+            //.reduce((i,j)=>i+j);
+            var ttt=[1,2,3];
+            ttt.reduce((i,j)=>i+j)
+        console.log(re);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

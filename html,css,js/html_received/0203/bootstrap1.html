@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <h1>안녕하세요?</h1>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function(e){
+        $('button').eq(0).click(function(e){
+            console.log('버튼 0번이 눌렸어요' , $(this).text(),$('h1').text());
+            $('h3').text($(this).text());//h3태그를 찾아서 거기에 현재 눌린버튼의 텍스트를
+            //저장해다오 
+        })
+        $('button').eq(1).click(function(e){
+            console.log('버튼 1번이 눌렸어요',$(this).text(),$('h2').text());
+        })
+        $('button').eq(2).click(function(e){
+            console.log('버튼 2번이 눌렸어요',$(this).text());
+        })
+        $('button').eq(3).click(function(e){
+            console.log('버튼 3번이 눌렸어요',$(this).text());
+            $('h4').text('사랑');// h4 태그를 찾아 사랑 문자열을 저장 
+        })
+        $('button').eq(4).click(function(e){
+            console.log('버튼 4번이 눌렸어요',$(this).text(),);
+        })
+        $('button').eq(5).click(function(e){
+            console.log('버튼 5번이 눌렸어요',$(this).text());
+        })
+        $('button').eq(6).click(function(e){
+            console.log('버튼 6번이 눌렸어요',$(this).text());
+        })
+        $('button').eq(7).click(function(e){
+            console.log('버튼 7번이 눌렸어요',$(this).text());
+        })
+        $('button').eq(8).click(function(e){
+            console.log('버튼 8번이 눌렸어요',$(this).text());
+            $('input').val($(this).text())
+        })
+    })
+</script>
+    <h1>예제 해딩 H1  <span class="badge badge-secondary">신규1</span></h1>
+    <h2>예제 해딩  H2 <span class="badge badge-secondary">신규2</span></h2>
+    <h3>예제 해딩 H3  <span class="badge badge-secondary">신규3</span></h3>
+    <h4>예제 해딩  H4 <span class="badge badge-secondary">신규4</span></h4>
+    <h5>예제 해딩 H5  <span class="badge badge-secondary">신규5</span></h5>
+    <h6>예제 해딩  H6 <span class="badge badge-secondary">신규6</span></h6>
+    입력한 값은 : <input type="text" name="" id="">
+    <button type="button" class="btn btn-primary">기본</button>
+    <button type="button" class="btn btn-secondary">보조</button>
+    <button type="button" class="btn btn-success">성공</button>
+    <button type="button" class="btn btn-danger">위험</button>
+    <button type="button" class="btn btn-warning">경고</button>
+    <button type="button" class="btn btn-info">정보</button>
+    <button type="button" class="btn btn-light">밝다</button>
+    <button type="button" class="btn btn-dark">어두움 </button>
+    <button type="button" class="btn btn-link">링크</button>
+  </body>
+</html>

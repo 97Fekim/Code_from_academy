@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>계산기</title>
+  </head>
+  <body>
+    <h1>계산기</h1>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   
+    <style>
+        button{
+            background-color: pink;
+        }
+    </style>
+<script>
+    var arr = [(i,j) => i+j , (i,j) => i-j   ,  (i,j) => i*j  , (i,j) => i/j ]
+    $(document).ready(function(e){
+        $('button').each(function(index,current){
+            $(this).click(function(e){ //this는 현재 눌린 버튼
+                var first = $('input').eq(0).val(); //첫번째 input 태그의 값을 읽어서 first변수에 저장
+                var second = $('input').eq(1).val(); //두번째 input 태그의 값을 읽어서 second변수에 저장
+                //태그에 입력된 값은 문자열이므로 숫자로 변환해야 연산을 할수 있음  
+                $('input').eq(2).val( arr[index](Number(first) ,Number(second) )  );
+            })
+        })// each  문 종료 
+    }) //document.ready() 
+</script>
+    첫번째 값  : <input type="text" name="" id="">
+    두번째 값  : <input type="text" name="" id="">
+    결과 값  : <input type="text" name="" id="">
+    <button type="button">+</button>
+    <button type="button">-</button>
+    <button type="button">x</button>
+    <button type="button">/</button>
+  </body>
+</html>

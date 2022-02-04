@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    var customers= [
+        {
+        name:'이재오', phoneNum:'9084321212',
+	    sport:'축구',team:'자이언트',gpa:3.61,
+	    subject:'',numFriends:0,friends:'' },
+        {
+        name:'인디라 파텔', phoneNum:'7325551234',
+	    sport:'테니스',team:'자이언트',gpa:3.92,
+	    subject:'자바',numFriends:0,friends:'' },
+        {
+        name:'사라 존슨', phoneNum:'2123231245',
+	    sport:'축구',team:'이글즈',gpa:3.71,
+	    subject:'',numFriends:1,friends:'제인스 ,2017765765' },
+        {
+        name:'자비어 존슨', phoneNum:'8568768765',
+	    sport:'골프',team:'',gpa:3.85,
+	    subject:'물리학',numFriends:1,friends:'"홍길동,9086547654' }
+    ]
+    var friendsRecord ={
+       name:'',phoneNum:'',index:0,friends:''
+    }
+    var gpaRecord={
+        name:'',phoneNum:'',index:0,gpa:0
+    }
+    var sportRecord={
+        name:'',phoneNum:'',index:0,team:''
+    }
+
+    const  matchCustomers =(f ) => {//customers(c), 람다리스트(f) 
+		 for(var t of f) {//람다 리스트 f에서 하나씩 꺼내면 람다(t) 가 되므로 호출가능 
+			 var record;
+			 var index =0;
+			 do {
+				 record= t(index);
+				 if(record!=null) {
+					 console.log(record);
+					 index = record.index+1;
+				 }
+			 }while(record!=null);
+		 } //for문 
+	 }
+     var fsport =(z)=>{
+			var sport =null;
+			for(var i=z;i<customers.length&&sport ==null; ++i){
+				if(customers[i].sport == '축구'){ //배열에서 하나씩 꺼낸 객체의 key=sport의 value가 축구이면
+                    sportRecord.name= customers[i].name
+                    sportRecord.phoneNum = customers[i].phoneNum
+                    sportRecord.index =i
+                    sport= sportRecord;
+                }
+            }
+			return sport;
+		};
+     var fgpa =(z)=>{
+			var gpa =null;
+			for(var i=z;i<customers.length&&gpa ==null; ++i){
+				if(customers[i].gpa >=3.75){ //배열에서 하나씩 꺼낸 객체의 key=sport의 value가 축구이면
+                    gpaRecord.name= customers[i].name
+                    gpaRecord.phoneNum = customers[i].phoneNum
+                    gpaRecord.index =i
+                    gpaRecord.gpa= customers[i].gpa
+                    gpa= gpaRecord;
+                }
+            }
+			return gpa;
+		};
+     var ffriends =(z)=>{
+			var friends =null;
+			for(var i=z;i<customers.length&&friends ==null; ++i){
+				if(customers[i].numFriends >=1){ //배열에서 하나씩 꺼낸 객체의 key=sport의 value가 축구이면
+                    friendsRecord.name= customers[i].name
+                    friendsRecord.phoneNum = customers[i].phoneNum
+                    friendsRecord.index =i
+                    friends= friendsRecord;
+                }
+            }
+			return friends;
+		};
+    var lambdaList =[fsport,fgpa,ffriends];
+    var rs = matchCustomers(lambdaList);
+    console.log(rs)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

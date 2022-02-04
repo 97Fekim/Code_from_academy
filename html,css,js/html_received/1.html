@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    안녕
+   <script>
+        let a= [];// 빈배열 생성 
+        a[0]=7;
+        a[1]=17;
+        a[2]=27;
+        a[3]=37;
+        a[4]=47;
+        a[5]=57;
+        for (let i = 0; i < 30; i++) {
+             a[i]=i*10;
+        }
+        console.log(a);
+        let b ={};
+        b["a"] =[1,2,3,4,5]
+        b["d"] =4
+        b["f"]="홍길동"
+        b.green="그린"
+        //console.log(b)
+        var result = a.map(  i=>  i*3  );
+        console.log(result)
+        result = a.filter(i=> i%2==0);
+        console.log(result)
+        a = [1,2,3];
+        console.clear();//화면 지우기 
+        result = a.map(i=>i*3)
+        console.log(result)
+        t=5;
+        window.t =6;
+
+        // map , reduce , filter의 파라미터는 함수(람다 함수)를받는다
+        //내가 처리하고 싶은기능을 람다 함수로 제공하면
+        //알아서 데이터 하나씩 꺼내다 내가 제공한 람다 함수대로 실행을 해줍니다. 
+
+        //람다 => 이름없는 함수 
+        function p(i,j){ //함수 정의 
+            return i+j;
+        }
+        //위의 이름이 있는 함수를 람다로 변경해보자 
+        var u = (i,j) => { return i+j; } //  ->
+
+        var t = p(3,4); //호출 
+        console.log(t);
+        var result = u(4,67);// u변수에는 람다 함수가 담겨있음 ,변수이름을 이용하여 함수 호출을 함 
+        console.log(result);
+
+        const q1 = (i,j,k)=> i + j *k
+        //위의 q1 변수를 이용하여 함수 호출 후 결과를 출력하세요 
+        //map ,filter, reduce 의 파라미터를 함수를 전달한다 
+       // map( 함수  )
+        //filter(   함수: Predicate 타입 (true 나 false를 반환 )  )
+        //reduce( 함수  )
+        //var ,let ,const(상수형 변수 )
+
+        const f = (i)=> i*3;
+        var rrr = f(3);
+        console.log(rrr)
+        var arr8=[1,2,3,4]
+        rrr =arr8.map(i=>i*3) ;
+        console.log(rrr)
+         for(var i =0;i<20;i++){
+            arr8[i]= i*4;
+        }
+        console.log(arr8)
+        rrr =arr8.filter((i)=> i%3==0);
+        console.log(rrr);
+        var objArr = [
+            {"a":"홍길동"  , "b":6},
+            {"a":"홍말자" ,"b":134},
+            {"a":"김말자" ,"b":23},
+            {"a":"김개똥","b":77}
+        ]
+       rrr = objArr.map(i=> i.a)
+       console.log(rrr)
+       rrr = objArr.map(i=> i.b).filter(i=>i>20)
+       console.log(rrr)
+       const numbers=[5,10,15]
+       rrr = numbers.reduce((acc,item)=> {
+           acc=acc+item
+           console.log('acc', acc , 'item',item);
+           return acc;
+        },10)
+       console.log(rrr)
+       //이제 reduce로 무지 어려운 것 합니다. 
+       const pokemon =[
+        {name:"charmander" ,type:"fire"},
+        {name:"sqirtle" ,type:"water"},
+        {name:"bulbasaur" ,type:"grass"}
+       ]
+    //    {
+    //     "charmander":{type:"fire"},
+    //     "sqirtle":{type:"water"},
+    //     "bulbasaur":{type:"grass"}
+    //    }
+        rrr = pokemon.reduce((acc,item)=> {
+           acc[item.name] = {type:item.type}
+           return acc;
+        },{})
+        console.log(rrr)
+
+        //pokemon[0].name =  {type:"fire"}
+        pokemon[0]["name"] =  {type:"fire"}
+
+
+
+  </script>
+</body>
+</html>

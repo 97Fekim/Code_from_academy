@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>표 만들기</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('button').eq(0).click(function(){
+                //버튼이 눌리면 여기 코드 실행함 
+                //버튼 태그 생성
+                $('a').eq(0).attr('href','https://www.naver.com');
+               
+               //attr (attribute약자/속성), 이 href를 찾아서 값을 attr의
+               //두번째 매개변수( 'https://www.naver.com' )로 변경해다오 
+            })
+            $('button').eq(1).click(function(){
+                //버튼이 눌리면 여기 코드 실행함 
+                //버튼 태그 생성
+                $('a').eq(1).attr('href','https://www.daum.net');
+               //attr (attribute약자/속성), 이 href를 찾아서 값을 attr의
+               //두번째 매개변수( 'https://www.naver.com' )로 변경해다오 
+            })
+            $('button').eq(2).click(function(){
+                $('a').eq(2).attr('href','https://seongnam.greenart.co.kr/');
+               //attr (attribute약자/속성), 이 href를 찾아서 값을 attr의
+               //두번째 매개변수( 'https://www.naver.com' )로 변경해다오 
+            })
+        })
+    </script>
+    <style>
+        table, th,td{
+            border: 1px solid #ccc;
+        }
+        th,td{
+            padding: 10px;
+        }
+    </style>
+</head>
+<!-- Caption 태그는 표 제목을 사용하기 위해 table 태그 바로 아래에 사용  -->
+<body>
+    <table border="1">
+        <caption>
+            <strong>Modern 브라우저</strong>
+            <p>국내에서 자주 사용하는 모던 브라우저</p>
+        </caption>
+        <tr>
+            <th>브라우저</th>
+            <th>제조업체</th>
+            <th>다운로드</th>
+        </tr>
+        <tr>
+            <th>크롬(Chrome)</th>
+            <td>구글</td>
+            <td><a href="https://www.google.com/chrome">구글로 가세요</a></td>
+        </tr>
+        <tr>
+            <th>파이어폭스(FireFox)</th>
+            <td>Mozzila</td>
+            <td><a href="https://www.mozilla.org/ko/firefox">파이어 폭스로 가세요</a></td>
+        </tr>
+        <tr>
+            <th>엣지(Edge)</th>
+            <td>마이크로 소프트</td>
+            <td><a href="https://www.microsoft.com/ko-kr/windows/microsoft-edge">마소로 가자</a></td>
+        </tr>
+    </table>
+    <!-- a (anchor ) href 속성의 값(url 주소) 으로 이동  -->
+    <button>누르면 네이버로 이동함 </button>
+    <button>누르면 다음으로 이동함 </button>
+    <button>누르면 그린 컴퓨터 로 이동함 </button>
+</body>
+</html>
