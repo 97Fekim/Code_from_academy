@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var funcArr = 
+        [
+        {a: (i,j)=>i+j, b:7, c:11},
+        {a: (i,j)=>i-j, b:17, c:21},
+        {a: (i,j)=>i*j, b:27, c:31},
+        {a: (i,j)=>i/j, b:37, c:41}
+        ];
+
+        var cnt =0, cnt2=0;;
+        const f = (i) => {
+            cnt++;
+            for(const u of i){
+                cnt2++;
+                var result = u.a(u.b,u.c);
+                console.log(cnt+cnt2, result);
+            }
+        }
+
+        // for(let i=0; i<4; i++){
+        //     f(funcArr);
+        // }
+
+        console.log(funcArr
+        .map(i => i=i.a(i.b,i.c))
+        );
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const f = (...u) => {   // 자바의 가변인자
+            var sum = 0;        // spread operator, c++
+            for(const i of u){
+                sum += i;
+            }
+            return sum;
+        }
+        //console.log(f(2,3,4,5,6,8));
+
+        var dict = {
+            a:[12,13,14,27],
+            b:{b:"홍길동", c:"홍말자",d:"김개똥"},
+            f1:[11,23,14]
+        };
+
+        let {a,b,f1} = dict; // destructuring(구조화)
+        console.log(a);
+        console.log(b);
+        console.log(f1);
+
+    </script>
+</head>
+<body>   
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <title>Document</title>
+    <script>
+        var str = ['사랑', '믿음', '증오', '행복', '희망'];
+        $(document).ready(function(){
+            for(var i=0; i<5; ++i)
+                $('button').eq(i).text(str[i]);
+        })
+
+        // 마지막 문제) 버튼의 색상을 빤작빤작하게 하세요.
+        // 버튼이 독립적으로 랜덤하게 하세요
+        var arr=[];
+        for(let i=0; i<10; i++){
+            arr.push(i);
+        }
+        arr.push('a');
+        arr.push('b');
+        arr.push('c');
+        arr.push('d');
+        arr.push('e');
+        arr.push('f');
+        console.log(arr);
+
+        $(document).ready(function(){
+            setInterval(()=>{
+
+                    for(let k=0; k<5; k++)
+                    {
+                        var randColor="#";
+                        for(var i=0; i<6; ++i)
+                            randColor += (arr[parseInt(Math.random()*16)]);
+                        $('button').eq(k).css('background-color',randColor);   
+                    }
+                    
+            },1000);
+        });
+
+    </script>
+
+</head>
+<body>
+    <button></button>
+    <button></button>
+    <button></button>
+    <button></button>
+    <button></button>
+</body>
+</html>
