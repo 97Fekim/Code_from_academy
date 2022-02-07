@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <title>Document</title>
+    <style>
+        ul{
+            list-style: none;
+        }
+        li{
+            margin:10px;
+        }
+        li label{
+            width: 120px;
+            float: left;
+            text-align: right;
+            padding-right: 8px;
+        }
+        input[type="submit"] {
+            text-align: center;
+            width: 100%;
+            height: 30px;
+            margin-top: 15px;
+        }
+    </style>
+    <script>
+        $(document).ready(function(event){
+            $('input[type=submit]').click(function(){
+                $(this).attr('type', 'hidden');
+            })
+            $('#user-id').change(function(event){
+                $('input[type=hidden]').attr('type', 'submit');
+            })
+        })
+    </script>
+
+</head>
+<body>
+    <h1>회원가입</h1>
+    <form action="">
+        <fieldset>
+            <legend>로그인정보</legend>
+            <ul>
+                <li>
+                    <label for="user-id">아이디</label>
+                    <input type="text" id="user-id">
+                </li>
+                <li>
+                    <label for="pw1">비밀번호</label>
+                    <input type="password" id="pw1">
+                </li>
+                <li>
+                    <label for="pw2">비밀번호 확인</label>
+                    <input type="password" id="pw2">
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>개인정보</legend>
+            <ul>
+                <li>
+                    <label for="user-name">이름</label>
+                    <input type="text" id="user-name">
+                </li>
+                <li>
+                    <label for="mail">메일주소</label>
+                    <input type="email" id="mail">
+                </li>
+                <li>
+                    <label for="phone">연락처</label>
+                    <input type="tel" id="phone">
+                </li>
+                <li>
+                    <label for="homep">블로그/홈페이지</label>
+                    <input type="url" id="homep">
+                </li>
+            </ul>
+        </fieldset>
+        <input type="submit" value="가입하기">
+
+            <!-- button(input type이 submit) input type=hidden 
+                이름의 input 태그의 내용이 변경되면(change 이벤트)
+                input type = submit으로 변경 -->
+            <!-- - 이벤트 기반의 프로그래밍은 유용하다. 
+                 - 이벤트 핸들러(콜백함수)
+                 - 이벤트 <-> 이벤트 핸들러(콜백함수/비동기 프로그래밍, asynchronous)
+                 - 이벤트, 네트워크 프로그래밍의 데이터는
+                   언제 올지 모르므로, 등록해놓고 데이터가 오면 데이터 처리
+                 - 운영체제, call back 호출하고 나중에 알려줘라.
+             -->
+            
+    </form>
+</body>
+</html>

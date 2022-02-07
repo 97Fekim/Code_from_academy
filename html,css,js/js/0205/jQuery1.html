@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <title>Document</title>
+    <script>
+        $(document).ready(function(){   // 선택자(selector)
+            $('button.a').click(function(){
+                console.log('id a 버튼이 눌렸다.');
+                $(this).css('background-color','red');
+            })
+            $('button.b').click(function(){
+                console.log('id b 버튼이 눌렸다.');
+                $(this).css('background-color','green');
+            })
+            $('button.c').click(function(){
+                console.log('id c 버튼이 눌렸다.');
+                $(this).css('background-color','cyan');
+            })
+            $('button.d').click(function(){
+                console.log('id d 버튼이 눌렸다.');
+                $(this).css('background-color','blue');
+            })
+            $('button#a').click(function(){
+                console.log('클래스 a 버튼이 눌렸다.');
+                $(this).css('background-color','yellow');
+            })
+        })
+    </script>
+</head>
+<body>
+    <button class="a">눌린다</button>
+    <button class="b">눌린다</button>
+    <button class="c">눌린다</button>
+    <button class="d">눌린다</button>
+    <button id="a">눌린다</button>    
+</body>
+</html>

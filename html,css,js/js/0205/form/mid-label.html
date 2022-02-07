@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+    <title>라벨 태그 사용</title>
+    <style>
+        .a{
+            background-color: red;
+            
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $('button#a').click(function(){
+                $('li').eq(2).addClass('a');    // class에 a를 추가하라
+            })
+            $('button#b').click(function(){
+                $('li').eq(2).removeClass('a');    // class에 a를 추가하라
+            })
+        })
+    </script>
+</head>
+<body>
+    <form action="">
+        <h2>수강 분야(다수 선택 가능)</h2>
+        <ul>
+            <li class="a"><input type="checkbox" value="grm">문법</li>
+            <li><input type="checkbox" value="wr">작문</li>
+            <li><input type="checkbox" value="rd">독해</li>
+        </ul>
+        <h3>수강과목(1과목만 선태 가능)</h3>
+        <ul>
+            <li>
+                <label for="">
+                    <input type="radio" name="subject" value="eng">영어회화</label>
+                </label>
+            </li>
+            <li>
+                <label for="">
+                    <input type="radio" name="subject" value="ch">중국어회화</label>
+                </label>
+            </li>
+            <li>
+                <label for="">
+                    <input type="radio" name="subject" value="jp">일어회화</label>
+                </label>
+            </li>
+        </ul>
+        <label for="t"></label>
+        <input type="text " id="t">
+    </form>
+    <button id="a">색상을 바꾸고 싶어요</button>
+    <button id="b">색상을 추가하고 싶어요</button>
+</body>
+</html>
