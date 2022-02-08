@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+         $(document).ready(function(){
+            $('button').click(function(){
+                var id = $('#user_id');
+                id.attr('minlength', '7');
+                var name = $('#user-email').val();
+                var pwd1 = $('#check_pwd').val();
+                var pwd2 = $('#user_pwd').val();
+                console.log('아이디 : ', id.val(), '이름 : ', name, '비밀번호 : ', pwd1, '확인 : ', pwd2);
+                console.log(id.menlength);
+            })                        
+        })
+    </script>
+</head>
+<body>
+    <h1>회원 가입을 환영합니다</h1>
+    <form action="">
+        <ul>
+            <li><label for="">
+                아이디 : <input type="text" id="user_id" size="10" minlength="4" maxlength="15">
+            </label>
+            <small style="color:red;">4~15자리 이내의 영문과 숫자</small>
+            </li>
+            <li><label for="">이메일 :
+                <input type ="email" id="user_email"></label>
+            </li>
+            <li><label for="">비밀번호 :
+                <input type ="password" id="user_pwd"></label>
+            </li>
+            <li><label for="">비밀번호 확인 :
+                <input type ="password" id="check_pwd"></label>
+            </li>
+            <li><input type="submit" value="회원가입"></li>    
+        </ul> 
+    </form>
+    <button>button</button>
+</body>
+</html>

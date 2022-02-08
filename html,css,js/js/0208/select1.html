@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹폼</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('select#class').change(function(){
+                var fin=$('select#class :selected').text();
+                console.log(fin);
+                $('input[id=id]').val(fin);
+                var tt = fin.length * 2;
+                $('input[id=name]').val(tt);
+
+            })
+        })
+    </script>
+
+    <style>
+        body{
+            background-color: #fff;
+        }
+        form fieldset{
+            margin-bottom: 25px;
+        }
+        form legend{
+            font-size: 15px;
+            font-weight: 600;
+        }
+        .reg{
+            font-size: 14px;
+            width: 110;
+            color: #390;
+            font-weight: bold;
+            float : left;
+            text-align: right;
+            margin-right: 10px;
+        }
+        /*  클래스 이름이 reg에 대해서
+        *   - 글자크기 14px
+        *   - 폭 110px
+        *   - 색상(color) #390
+        *   - 글자두께(font-weight) bold
+        *   - float lest
+        *   - 글자정렬(text-align 오른쪽)
+        *   - margin-right 10px
+        */
+
+        form ul li{
+            list-style: none;
+            margin: 15px;
+            font-size:14px;
+        }
+        /*  form의 자손인 ul의 자손인 li에 대해
+        *   - list-style
+        *
+        */
+    </style>
+</head>
+<body>
+    <h1>여름 방학특강</h1>
+    <form action="">
+        <fieldset>
+            <legend>수강 신청인</legend>
+            <ul>
+                <li>
+                    <label for="id" class="reg" size="5">학과</label>
+                    <input type="text" id="id" autofocus>
+                </li>
+                <li>
+                    <label for="name" class="reg">이름</label>
+                    <input type="text" id="name" autofocus>
+                </li>
+                <li>
+                    <label for="class">학과</label>
+                    <select name="" id="class" size="5" multiple>
+                        <option value="archi">건축공학과</option>
+                        <option value="mechanic">기계공학과</option>
+                        <option value="indust">산업공학과</option>
+                        <option value="elec">전기전자공학과</option>
+                        <option value="computer" selected>컴퓨터공학과</option>
+                        <option value="chemical">화학공학과</option>
+                    </select>    
+                </li>        
+            </ul>
+        </fieldset>
+    </form>
+</body>
+</html>

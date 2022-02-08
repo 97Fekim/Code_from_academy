@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <title>Document</title>
+    <script>
+        /* 문제1) */
+        // $(document).ready(function(){      
+        //     $('button').click(function(){        
+        //         $(this).css('background-color',$('input').eq(0).val());
+        //     })
+        // })
+        /* 문제2) */
+        const gugudan = (i) => {
+            var merged = "";
+            for(var j=1; j<=10; ++j){
+                merged += i + "x" + j + "=" + j*i + "\n";            }
+            return merged;
+        }     
+        $(document).ready(function(){
+            setInterval(()=>{
+                var index = parseInt(Math.random()*9);
+
+                $('input[type=text]').val(index);
+                console.log(index);
+                console.log(gugudan(index));
+            },1000);
+        })
+    </script>
+</head>
+<body>
+    <input type='color'>
+    <button>저 색상값을 읽어서 이 버튼의 색상을 변경하세요</button>    
+    <hr>
+    <input type="text">
+    <!-- 2~9단까지 1초마다 램덤으로 값을 여기 에 입력되도록 하고
+        그 입력된 값이 console.log로 해당 구구단이
+        출력되도록 하세요 -->
+</body>
+</html>
