@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <title>Document</title>
+    <script>       
+        var arr = [];
+       
+        for(var i =0; i<5; ++i){
+            arr[i]={};
+        }
+        for(var i =0; i<5; ++i){
+            arr[i] = {'data':3*(i+1), 'iter':5*(i+1)};
+        }
+        
+        for(var j =0; j<5; ++j){
+            arr[j].f = (i)=>i+(5*(j+1));
+        }
+        for (let i = 0; i < 5; i++) {
+            arr[i] = (i) => i+(j+1)*5;
+            
+        }
+        
+        for(let j = 0; j < arr.length; ++j){
+            arr[j].f = (i,k) => i + k + ( j+1)*5;
+        }
+    
+        for(var i of arr){
+            console.log(i.f(1,2));
+        }
+
+        
+
+        // 마지막 문제 ) 배열에서의 input 태그를
+        // 가져와서 입력된 문자열을 숫자로 변환한 후
+        // 총합을 출력 태그에 하세요
+        $(document).ready(function(){
+            
+            $('button').click(function(){
+                for(let i=0; i<arr.length; ++i){
+                    arr[i].tag = $('input').eq(i);
+                }
+                
+                var sum=0;
+                for(var i=0; i<arr.length; ++i){
+                    sum += Number(arr[i].tag.val());
+                    console.log(sum);
+                }
+        
+                $('input').eq(5).val(sum);
+            })
+        })
+        
+    </script>
+</head>
+<body>
+    국어<input type="text">
+    영어<input type="text">
+    수학<input type="text">
+    총점<input type="text">
+    평균<input type="text">
+    출력<input type="text">
+    <button>누르면 출력 태그에 나와요</button>
+</body>
+</html>

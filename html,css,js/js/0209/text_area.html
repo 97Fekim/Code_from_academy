@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <title>Document</title>
+    <style>
+        form fieldset{
+            margin:10px;
+        }
+        form legend{
+            font-size: 18px;
+            color: #0066ff;
+            font-weight: 600;
+        }
+        form label em{
+            font-size:15px;
+            color:red;
+            font-weight: 800;
+        }
+        form ul li{
+            list-style: none;
+            margin: 10px;
+        }
+        form .easys{
+            text-align: left;
+            font-size: 12px;
+            color:blue;
+        }
+        form fieldset .sendform{
+            text-align: center;
+        }
+    </style>
+    <script>
+        const f = (data, iter) => {
+            var merged = '';
+            for (let i = 0; i < iter; i++) {
+                merged += data;
+            }
+            return merged;
+        }
+
+        $(document).ready(function(){
+            var inputs = $('fieldset.register input').attr('id');
+                var ids = [];
+                for(let index=0; index<inputs.length; ++index){
+                    id.push(inputs.eq(i).attr('id'));
+
+            $('button').click(function(){
+                var v0 = "";
+                for (let i = 0; i < inputs.length; i++) {
+                    v0 += f(inputs.eq(i).val(),i+1);
+                }
+                $('textarea').text(v0);
+
+
+                // /* 자료  */
+                // var v_id=String($('input').eq(3).val());
+                // var v_pw=String($('input').eq(4).val());
+                // var v_pw2=String($('input').eq(5).val());
+                // var v_name=String($('input').eq(6).val());
+                // var v_mail=String($('input').eq(7).val());
+                // var v_tel=String($('input').eq(8).val());
+
+                // var answer = "" // 결합 문자열
+
+                // /* Controller */
+                // answer += v_id;
+                // for(var i=0; i<2; ++i) answer += v_pw
+                // for(var i=0; i<3; ++i) answer += v_pw2
+                // for(var i=0; i<4; ++i) answer += v_name
+                // for(var i=0; i<5; ++i) answer += v_mail
+                // for(var i=0; i<6; ++i) answer += v_tel
+                
+                // /* View */
+                // $('textarea').text(answer);
+                
+            })
+        })
+    </script>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>로그인</legend>
+            <label for="user_id">아이디</label>
+            <input type="text" id="user_id" size="10" autofocus>
+            <label for="user_pw">비밀번호</label>
+            <input type="password" id="user_pw" size="10">            
+            <input type="submit" value="로그인">
+        </fieldset>
+        <fieldset class="register">
+            <legend>가입하기</legend>
+            <ul>
+                <li>
+                    <label for="user_name" class="reg">아이디<em>*</em></label>
+                    <input type="text" id="new_id" size="20" autocomplete="on" required>
+                </li>
+                <li>
+                    <label for="new_pw1" class="reg">비밀번호<em>*</em></label>
+                    <input type="password" id="new_pw1" size="20" required>
+                </li>
+                <li>
+                    <label for="new_pw2" class="reg">비밀번호 확인<em>*</em></label>
+                    <input type="text" id="new_pw2" size="20" required>
+                </li>
+                <li>
+                    <label for="user_name" class="reg">이름<em>*</em></label>
+                    <input type="text" id="user_name" size="20" required>
+                </li>
+                <li>
+                    <label for="user_mail" class="reg">메일주소<em>*</em></label>
+                    <input type="email" id="user_mail" size="20" required>
+                </li>
+                <li>
+                    <label for="user_tel" class="reg">전화번호<em>*</em></label>
+                    <input type="tel" id="user_tel" size="20" required>
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset class="easys">
+            <legend>이지스퍼블리싱</legend>
+            <textarea name="intro" id="" cols="60" rows="5">
+                열심히 사는 사람들의 손을 잡아주는 곳
+                우리는 책을 내기 전에 다시 한번
+            </textarea>
+            <fieldset class="sendform">
+                <input type="submit" value="가입하기">
+                <input type="reset" value="다시쓰기">
+            </fieldset>
+        </fieldset>
+    </form>
+    <button>button</button>
+    <!-- 가입하기 input 태그의 문자열(값을) textarea에 출력
+        아이디의 문자열 + 비밀번호는 2번 결합, 비밀번호는 3번 결합
+        , 이름은 4번 결합 , 메일주소는 다섯번 결합, 전화번호는 
+        6번 결합 총 문자열을 textarea에 출력-->
+</body>
+</html>
