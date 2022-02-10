@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>외부 스타일 시트2</title>
+    <style>
+        ul {
+            color : blue;
+            list-style-type: square; /* 블릿 형태 사각형 */
+        }
+
+    </style>
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    
+    <script>
+        var flag = true;
+        $(document).ready(function(){
+           /* 이미지 크기 변경 예제 */
+            var w=0;
+            var h=0;
+            $('button').click(function(){
+                w = Number($('img').attr('width'));
+                h = Number($('img').attr('height'));
+                $('img').attr('width', w+30);
+                $('img').attr('height', h+30);
+            })
+
+
+            /* css 변경 예제 */
+            // $('button').eq(1).click(function(){
+            //     if(flag) {
+            //         $('link').attr('href', "css/style.css");
+            //         flag = false;
+            //     }
+            //     else {
+            //         $('link').attr('href', "css/style.css2");
+            //         flag = true;
+            //     }
+            // })
+        })
+    </script>
+</head>
+<body>
+    <img src = "watch.jpg" alt="시계" width="150" height="150">
+    <h1>세계 3대 미향</h1>   
+    <ul>
+        <li>시드니, 호주</li>
+        <li>라우데자네이루, 브라질</li>
+        <li>나폴리, 이탈리아</li>
+    </ul>
+    <button>button</button>
+    <button>button2</button>
+</body>
+</html>

@@ -38,22 +38,27 @@
         // 가져와서 입력된 문자열을 숫자로 변환한 후
         // 총합을 출력 태그에 하세요
         $(document).ready(function(){
-            
             $('button').click(function(){
                 for(let i=0; i<arr.length; ++i){
                     arr[i].tag = $('input').eq(i);
-                }
-                
+                }    
                 var sum=0;
                 for(var i=0; i<arr.length; ++i){
                     sum += Number(arr[i].tag.val());
                     console.log(sum);
                 }
-        
                 $('input').eq(5).val(sum);
             })
         })
         
+        var pp = {};
+        pp.b=7;
+        pp['c']=11;
+        console.log(pp);
+        [1,2,3,4,5].reduce((i,j)=>{
+            obj[j] = obj['data'];
+            return obj;
+        }
     </script>
 </head>
 <body>

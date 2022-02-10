@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>블루베리</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    
+    <style>
+
+        h2.bluetext{
+            color: blue;
+        }
+        h2.redtext{
+            color: red;;
+        }
+        h2.yellowtext{
+            color: yellow;
+        }
+        h2.cyantext{
+            color: cyan;
+        }
+        h2.magentatext{
+            color:magenta;
+        }
+
+    </style>
+    <script>    
+        var arr = ['red', 'blue','magenta','cyan','yellow'];
+        var cnt=0;
+        $(document).ready(function(){
+            
+            $('button').click(function(){
+                setInterval(()=>{
+                    var v_color = arr[cnt] + "text";
+                    $('h2.text').removeClass(v_color);
+
+                    cnt = (cnt+1)%5;
+                    var v_color = arr[cnt] + "text";
+                    $('h2.text').addClass(v_color); 
+                },50);
+            })
+            // 문제8) addClass를 이용하여 버튼을 누를때마다, 
+            // arr 배열에서 하나씩 꺼내어
+            // 순차적으로 색상이 적용되도록 하세요
+        })
+    </script>
+<body>
+    <h1>블루베리에 관한 연구</h1>
+    <h2 class="text">블루베리의 항산과 효능</h2>
+    <p class="bluetext">블루베리는 항산화제인이 있습니다.</p>
+    <p>메세츄세트 보스톤에 과일이라고 합니다.</p>
+    <h2>블루베리와 노화</h2>
+    <p>USDA 인류영양 연구센터에서 발견하였습니다.</p>
+    <!-- 문제6) h2 태그의 클래스 명이 bluetext인 것을
+        찾아 색상을 파란색으로 칠하세요 -->
+    <button>button</button>
+</body>
+</html>

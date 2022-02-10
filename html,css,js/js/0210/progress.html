@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            var tt = $('progress').eq(0).val();
+            $('progress').eq(1).val(tt);
+        })
+    </script>
+
+    <title>웹폼</title>
+</head>
+<body>
+    <ul>
+        <li><label for="">15 남은</label>
+        <!-- 전체 60초 중 50초 진행 -->
+        <progress value="20" max="60"></progress>
+        </li>
+        <li>
+            <label for="">진행률 30%</label>
+            <!-- 전체 100중 30만큼 진행 -->
+            <progress value="30" max="100"></progress>
+        </li>
+    </ul>
+</body>
+</html>
