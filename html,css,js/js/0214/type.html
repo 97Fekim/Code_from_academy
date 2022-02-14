@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <title>Document</title>
+    <script>
+        var x = 10;
+        var str = x.toString();     // 문자열로 형변환(explicit/명시적)
+        console.log(typeof str);
+        
+        var tt = 5 * '10';          // 암묵적 형변환(implicit/암묵적)
+        console.log(tt)
+        
+        var a = 1 - '1';
+        console.log(a);
+        
+        var str1 = String(1);
+        console.log(typeof str1);
+        
+        var strBoolean = String(true);
+        console.log(typeof strBoolean);
+
+        var numberType = Number('100');
+        console.log(typeof numberType);
+
+        var booleanType = Boolean('이재오');
+        console.log(booleanType);
+
+        booleanType = Boolean('');
+        console.log(booleanType);
+
+        booleanType = Boolean(undefined);
+        console.log(booleanType);
+
+        booleanType = Boolean(null);
+        console.log(booleanType);
+
+        var final = null && '홍길동';
+        console.log(final)
+
+        var onfinal = !undefined || '홍말자';
+        console.log(onfinal);
+
+        var last_name = 'seol joo'
+            var person={
+            firstName : 'Lee',
+            SayHello:function(){
+                console.log(`안녕하세요 저의 이름은 ${this.firstName} ${last_name} 이에요`);    // 문제1) 출력되도록 하라
+            }
+        }
+        // 문제2) name은 성이고, 이름은 외부에서 호출시 전달하여 성과 이름이 출력되도록 하세요
+        // 문제3) 객체 배열에 lastName의 key를 가진 문자열(value)를 10개 정도 추가하고 그 데이터를 map을 이용하여 출력하세요
+        
+        person.SayHello();
+
+        console.log("n\n\n\n\n\n\n\n\n\n\n");
+
+        var strName = ['a','b','c','d','e'];
+        var nameArr = [];
+
+        for(let j=0; j<10; ++j){
+            var rand = '';
+            for(let i=0; i<3; i++){
+                rand+=strName[parseInt(Math.random()*strName.length)];
+            }
+            rand+=(j+1);
+            nameArr.push({lastName:rand})
+        }
+        console.log(nameArr);
+        nameArr.map(i => person.SayHello(i.lastName));
+        var person1 = {
+            firstName : 'Lee',
+            SayHello:(lastNames) => `안녕하세요 저의 이름은 ${this.firstName} ${last_name} 이에요`,
+            foodHello: (u) => `오늘 먹은 음식은 ${u}입니다`
+        }
+
+        console.log("n\n\n\n\n\n\n\n\n\n\n");
+
+        var a7 = '홍길동';
+        var b7 = '홍말자';
+        var c1 = '김개똥';
+        var obj2 = {a3:a7, b3:b7, c:c1};
+        var obj3 = {
+            a4 : [1,2,3,4,5,6],
+            tt9:{u:"그린컴퓨터"},
+            rrr:{
+                    v:[
+                        {green:"그린 말자", red:"빨간 홍자"},
+                        {green:"그린 컴퓨터", red:"빨간 컴퓨터"}
+                    ], q:"오늘은 월요일"
+                }
+        }
+        console.log(obj3.rrr.v[0].red);
+        console.log(obj3.rrr.v[1].red);
+
+        const destucture = (obj) => {
+            console.log(obj.rrr.v[0].red);
+            console.log(obj.rrr.v[1].red);
+        }
+        destucture(obj3);
+        // destructuring(구조분해)
+        // 빨간 홍자와, 빨간 컴퓨터 출력하세요
+        // 1) 함수 호출없이 destructuring을 활용
+        // 2) 함소 호출할시 destructuring 활용
+
+
+        // let {a3,b3,c} = obj2;
+        // console.log(a3,b3);
+
+        // const f3 = (tt) => {
+        //     console.log(tt.a3);
+        // }
+        // const f4 = ({a3}) => {
+        //     console.log(a3)
+        // }
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

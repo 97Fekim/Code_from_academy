@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <title>text-Transform</title>
+    <script>
+        
+        /* 구구단 출력 함수 */
+        const f = (j) => {
+            for(var i=1; i<=9; ++i){
+                var res = ""
+                res = j + "*" + i + "=" + i*j;
+                console.log(res);
+            }
+        }
+        
+        $(document).ready(function(){
+            // 1) 배열에 5의 배수 10개 저장
+            var arr = [];
+            for(var i=0; i<10; ++i)
+                arr[i] = 5 * (i+1);
+            console.log(arr);
+
+            // 2) 짝수의 총합 구하기
+            var sum=0;
+            for(var i=0; i<arr.length; ++i)
+                if(arr[i] % 5 == 0)
+                    sum += arr[i];
+            console.log(sum);
+
+            // 3) 함수 선언 후, prompt로 입력된 값을 매개변수(파라미터)로 전달하여
+            // 해당 입력된 값의 구구단을 console.log로 호출한 곳에서 출력함
+            var n = prompt();
+            f(n);
+        })
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
