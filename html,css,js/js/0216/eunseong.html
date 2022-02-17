@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <title>Document</title>
+    <script>
+        var arr = [];   // 전역
+        $(document).ready(function(){
+            var arr = $('img');
+            console.log(arr.length);
+        })
+        $(arr[0]).click(function(){
+        
+            console.log('이미지가 눌렸다');
+        
+        })
+        // window.onload, document.ready
+    </script>
+
+</head>
+<body>
+    <img src = "book.png" alt="">
+    <img src = "book.png" alt="">
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <title>Document</title>
+    <style>
+        .select {
+            background-color: red;
+        }
+    </style>
+    <script>
+        var arr = []
+        $(document).ready(function(){
+            $('button').each(function(key, value){
+                $(this).click(function(){
+                    console.log(key);
+                    $(this).addClass('select');
+                    for(let i=0; i<5; i++){
+                        if(i != key)
+                        $('button').eq(i).removeClass('select');
+
+                    }
+                })
+            })
+            
+        })        
+    </script>
+
+</head>
+<body>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
+    <button>5</button>
+    <button>6</button>
+</body>
+</html>
