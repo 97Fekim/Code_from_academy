@@ -1,8 +1,12 @@
+import Click from "./Click";
+import Counter from "./Counter";
+import InputSample from "./InputSample";
+import Say from "./Say";
 
 function App() {
   return (
     <div>
-      <h1>Hello World!</h1>
+      <Click />
     </div>
   );
 }
