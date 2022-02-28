@@ -12,7 +12,6 @@ create table professor( -- professor라는 이름으로 table을 생성해라
     hpage varchar2(50)
 );
 -- 대소문자 구분하지 않음
-
 insert into professor
 values(1001,'Audie Murphy','Murphy','a full professor',550,to_date('1980-06-23','YYYY-MM-DD'),100,101,'captain@abc.net','http://www.abc.net');
 insert into professor
@@ -47,9 +46,22 @@ insert into professor
 values (4007,'Jodie Foster','Foster','assistant professor',290,to_date('2001-05-23','YYYY-MM-DD'),30,301,'silver-her@daum.net',null);
 
 commit; 
-
 select * from professor;
+desc professor;
 
+select count(position) from professor;  -- 갯수 가져오기
+select distinct position from professor;   -- 중복 제거 후 가져오기
+select position "직위" from professor;    -- position -> 직위  변경 후 가져오기
+-- 문제 2) id를 "아이디"로 position은 "직책" pay는 "임금" hiredate는 "고용일"
+-- bonus는 "보너스", deptno는 "부서번호", email은 "이메일", hpage는 "페이지"로 칼럼명 변경 후 출력하세요
+select position "직위" from professor;
+select id "아이디" from professor;
+select pay "임금" from professor;
+select hiredate "고용일" from professor;
+select bonus "보너스" from professor;
+select deptno "부서번호" from professor;
+select email "이메일" from professor;
+select hpage "페이지" from professor;
  
  
  -- 2) department 예제1
@@ -179,3 +191,5 @@ desc professor;
 select * from department;
 insert into professor values('id1', 'name1', '교수', 'kim', 'email1', 'duty1', 'Mg1');
 select * from professor;
+
+
