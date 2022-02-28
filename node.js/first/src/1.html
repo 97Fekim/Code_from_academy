@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr = [
+            {address : 'a', phone:'010', 'age':20},
+            {address : 'b', phone:'011', 'age':21},
+            {address : 'c', phone:'012', 'age':22},
+            {address : 'd', phone:'013', 'age':23},
+            {address : 'e', phone:'014', 'age':24},
+            {address : 'f', phone:'015', 'age':25},
+        ]
+        var re = arr.reduce((i,j) => {
+            var merged = '';
+            i.address += j.address;
+            i.phone += j.phone;
+            i.age += j.age;
+            i.sum += j.age*20;
+            for (let t = 0; t < j.age; t++) {
+                merged += j.address+j.phone;
+                
+            }
+            i.arr.push(merged);
+            return i;
+        }, {address:'aa', phone:'010', 'age':20, sum:100, arr:[]})
+        console.log(re);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

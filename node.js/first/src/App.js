@@ -1,13 +1,10 @@
-import Click from "./Click";
-import Counter from "./Counter";
-import EventPractive from "./EventPractive";
-import InputSample from "./InputSample";
-import Say from "./Say";
+
+import IteratorSample from "./IteratorSample";
 
 function App() {
   return (
     <div>
-      <EventPractive />
+      <IteratorSample />
     </div>
   );
 }
