@@ -1,10 +1,11 @@
-
-import IteratorSample from "./IteratorSample";
+import Color from "./Color";
 
 function App() {
   return (
     <div>
-      <IteratorSample />
+      {[1,2,3,4].map((i) => (
+        <Color no={i}>{i}번</Color>
+      ))}
     </div>
   );
 }
