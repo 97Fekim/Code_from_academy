@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+
+        // 문제3
+        const f = (i,j,) => {
+            i = i * 5;
+            j = j * 3;
+            return i+j;
+        }
+        
+        $(document).ready(function(){
+            $('button').eq(0).click(function(){
+                console.log(f(5,5));
+            })
+        })
+
+        // 문제4
+
+        // 배열 생성
+        var arr = [];
+
+        // 1~20까지 랜덤한 정수를 길이가 20인 배열에 삽입
+        for(var i=1; i<=20; i++){
+            arr[i] = parseInt(Math.random()*20);
+        }
+
+        // 짝수인 인자만 더하여 sum에 누적한 후, sum 반환
+        const odd = (arr) => {
+            var sum = 0;
+            for(var j of arr){
+                if(arr[j] % 2 == 0)
+                sum += arr[j];
+            }
+            return sum;
+        }
+
+        // 함수 호출
+        console.log(odd(arr));
+
+        
+
+
+        
+    </script>
+</head>
+<body>
+    <button>button1</button>
+    <button>button2</button>
+    <button>button3</button>
+    <button>button4</button>
+    <button>button5</button>
+
+    <!-- <form action="./result.html" method="get">
+        <ul>
+            <li>
+                <label for="name">이름</label>
+                <input type="name" name="name"> 
+            </li>
+            <li>
+                <label for="password">비밀번호</label>
+                <input type="password" name="password"> 
+            </li>
+            <li>
+                <label for="address">주소</label>
+                <input type="text" name="addr"> 
+            </li>
+            <li>
+                <label for="phoneNumber">전화번호</label>
+                <input type="tel" name="pn"> 
+            </li>
+            <li>
+                <input type="submit" title="로그인" value="log in"> 
+            </li>
+        </ul>
+    </form> -->
+
+</body>
+</html>
