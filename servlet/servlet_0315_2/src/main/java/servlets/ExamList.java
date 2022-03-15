@@ -6,7 +6,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.Collections;
+import java.util.LinkedList;
+import java.util.Queue;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,10 +15,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@SuppressWarnings("serial")
-@WebServlet("/member/list")
-public class MemberListServlet extends HttpServlet {
 
+@SuppressWarnings("serial")
+@WebServlet("/list")
+public class ExamList extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Connection conn = null;
@@ -26,22 +27,18 @@ public class MemberListServlet extends HttpServlet {
 		
 		try {
 			DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
-			conn= DriverManager.getConnection("jdbc:mysql://localhost/bluedb","root","1234");
+			conn= DriverManager.getConnection("jdbc:mysql://localhost/reddb","root","1234");
 			System.out.println(conn);
 			stmt = conn.createStatement();
-			rs =stmt.executeQuery("select MNO, MNAME, EMAIL,CRE_DATE FROM MEMBERS ORDER BY MNO ASC" );
+			rs =stmt.executeQuery("select * FROM green");
 			response.setContentType("text/html ;charset=UTF-8");
 			PrintWriter out = response.getWriter();
 			out.println("<html><head><title>회원목록</title></head>");
 			out.println("<body><h1>회원 목록</h1>");
-			out.println("<p><a href = 'add'>신규회원</a></p>");
 			while(rs.next()) {
 				out.println(
-						rs.getInt("mno") + "," +
-						"<a href = 'update?no=" + rs.getInt("mno") + "'>" + 
-						rs.getString("mname") + "</a>," + 
-						rs.getString("email") + "," +
-						rs.getDate("cre_date") + "<br>"
+						"<a href='update?no=" + rs.getInt("no") + "'>" + rs.getInt("no") + "</a>," +
+						rs.getString("name") + "<br>"
 						);
 			}
 			out.println("</body></html>");
@@ -74,9 +71,9 @@ public class MemberListServlet extends HttpServlet {
 		}
 	}
 
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		
 	}
 
 }

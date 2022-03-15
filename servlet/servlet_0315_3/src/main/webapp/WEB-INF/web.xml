@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>servlet_0315_3</display-name>
+  
+  <!-- update 서블릿 -->
+  - <servlet>
+  	<servlet-name>MemberUpdateServlet</servlet-name>
+  	<servlet-class>servlets.MemberUpdateServlet</servlet-class>
+	<!-- 매핑 하는 부분은 아님.  -->
+  	<init-param>
+  		<param-name>driver</param-name>
+  		<param-value>com.mysql.cj.jdbc.Driver</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>url</param-name>
+  		<param-value>jdbc:mysql://localhost/bluedb</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>username</param-name>
+  		<param-value>root</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>password</param-name>
+  		<param-value>1234</param-value>
+  	</init-param>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>MemberUpdateServlet</servlet-name>
+	<url-pattern>/member/update</url-pattern>
+  </servlet-mapping>
+   
+  
+  <!-- add 서블릿 -->
+  <servlet>
+  	<servlet-name>MemberAddServlet</servlet-name>
+  	<servlet-class>servlets.MemberAddServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>MemberAddServlet</servlet-name>
+	<url-pattern>/member/add</url-pattern>
+  </servlet-mapping>
+  
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+</web-app>
