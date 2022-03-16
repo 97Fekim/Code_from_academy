@@ -3,10 +3,10 @@
   <display-name>servlet_0315_3</display-name>
   
   <!-- update 서블릿 -->
-  - <servlet>
+   <servlet>
   	<servlet-name>MemberUpdateServlet</servlet-name>
   	<servlet-class>servlets.MemberUpdateServlet</servlet-class>
-	<!-- 매핑 하는 부분은 아님.  -->
+	<!-- DB 정보를 넘기는 부분  -->
   	<init-param>
   		<param-name>driver</param-name>
   		<param-value>com.mysql.cj.jdbc.Driver</param-value>
@@ -34,11 +34,44 @@
   <servlet>
   	<servlet-name>MemberAddServlet</servlet-name>
   	<servlet-class>servlets.MemberAddServlet</servlet-class>
+  	<!-- DB 정보를 넘기는 부분  -->
+  	<init-param>
+  		<param-name>driver</param-name>
+  		<param-value>com.mysql.cj.jdbc.Driver</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>url</param-name>
+  		<param-value>jdbc:mysql://localhost/bluedb</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>username</param-name>
+  		<param-value>root</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>password</param-name>
+  		<param-value>1234</param-value>
+  	</init-param>
   </servlet>
   <servlet-mapping>
 	<servlet-name>MemberAddServlet</servlet-name>
 	<url-pattern>/member/add</url-pattern>
   </servlet-mapping>
+  
+  <!-- 필터 선언 -->
+  <filter>
+  	<filter-name>CharacterIncodingFilter</filter-name>
+  	<filter-class>filters.CharacterIncodingFilter</filter-class>
+  	<init-param>
+  		<param-name>encoding</param-name>
+  		<param-value>UTF-8</param-value>
+  	</init-param>
+  </filter>
+  <!-- 필터 URL 매핑 -->
+  <filter-mapping>
+  	<filter-name>CharacterIncodingFilter</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
   
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>

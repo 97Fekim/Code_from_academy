@@ -38,15 +38,16 @@ public class MemberAddServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setCharacterEncoding("UTF-8");
 		Connection conn = null;
 		PreparedStatement stmt = null;
 
 		try {
-			Class.forName(this.getInitParameter("driver"));
+			//Class.forName(this.getInitParameter("driver"));
 			conn = DriverManager.getConnection(this.getInitParameter("url"), this.getInitParameter("username"),
 					this.getInitParameter("password"));
-
 			System.out.println(" 추가 post connection 객체 " + conn);
+			
 			stmt = conn.prepareStatement(
 					"insert into members (email, pwd, mname, cre_date, mod_date)" + " values(?,?,?,now(),now())"); // ?는
 																													// 준비한

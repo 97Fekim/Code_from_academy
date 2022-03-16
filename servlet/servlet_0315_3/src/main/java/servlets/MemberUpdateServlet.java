@@ -17,11 +17,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @SuppressWarnings("serial")
-@WebServlet("/member/update")
+//@WebServlet("/member/update")
 public class MemberUpdateServlet extends HttpServlet {
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Connection conn = null;
 		Statement stmt = null;
 		ResultSet rs = null;
@@ -70,9 +69,9 @@ public class MemberUpdateServlet extends HttpServlet {
 		}
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// 필터 적용 했으므로 주석처리
+		//request.setCharacterEncoding("UTF-8");
 		Connection conn = null;
 		PreparedStatement stmt = null;
 
