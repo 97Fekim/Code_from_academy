@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -44,9 +45,13 @@ public class MemberAddServlet extends HttpServlet {
 
 		try {
 			
-			DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
-			conn = DriverManager.getConnection("jdbc:mysql://localhost/bluedb", "root", "1234");
-			System.out.println(" 추가 post connection 객체 " + conn);
+			ServletContext sc = this.getServletContext();
+			Class.forName(sc.getInitParameter("driver"));
+			conn = DriverManager.getConnection(
+					sc.getInitParameter("url"),
+					sc.getInitParameter("username"),
+					sc.getInitParameter("password")
+					);
 			
 			stmt = conn.prepareStatement(
 					"insert into members (email, pwd, mname, cre_date, mod_date)" + " values(?,?,?,now(),now())"); // ?는 준비한 후 나중에 채운다(prepare)

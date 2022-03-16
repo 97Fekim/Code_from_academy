@@ -30,11 +30,12 @@
   </servlet-mapping>
    
   
-  <!-- add 서블릿 -->
+  <!-- add Mapping -->
+  <!-- 
   <servlet>
   	<servlet-name>MemberAddServlet</servlet-name>
   	<servlet-class>servlets.MemberAddServlet</servlet-class>
-  	<!-- DB 정보를 넘기는 부분  -->
+  	DB 정보를 넘기는 부분 
   	<init-param>
   		<param-name>driver</param-name>
   		<param-value>com.mysql.cj.jdbc.Driver</param-value>
@@ -55,7 +56,7 @@
   <servlet-mapping>
 	<servlet-name>MemberAddServlet</servlet-name>
 	<url-pattern>/member/add</url-pattern>
-  </servlet-mapping>
+  </servlet-mapping> -->
   
   <!-- 필터 선언 -->
   <filter>
