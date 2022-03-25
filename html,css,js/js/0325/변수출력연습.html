@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="category" name="categoryCode" class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" required="">
+        <option value="community" data-external="false" data-anonymity="false">
+        자유게시판
+        </option>
+        <option value="study" data-external="false" data-anonymity="false">
+        스터디 모집 게시판
+        </option>
+    </select>
+    <button id="btn1">button</button>
+</body>
+
+<script>
+    document.getElementById("btn1").addEventListener('click', btnClick);
+    function btnClick(){
+        var sel = document.getElementById("category");
+        var choice = sel.options[sel.selectedIndex].value;
+        console.log(choice);
+    }
+</script>
+
+</html>
